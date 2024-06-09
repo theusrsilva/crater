@@ -54,7 +54,15 @@ services:
       - ./:/var/www
     networks:
       - crater
-
+  selenium:
+    image: 'selenium/standalone-firefox'
+    container_name: selenium
+    ports:
+      - 4444:4444
+    volumes:
+        - '/dev/shm:/dev/shm'
+    networks:
+        - crater
 volumes:
   db:
 

@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libzip-dev \
     libmagickwand-dev \
-    mariadb-client
+    mariadb-client \
+    iputils-ping
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
