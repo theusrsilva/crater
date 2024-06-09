@@ -17,7 +17,7 @@
             <directory suffix=".php">./app</directory>
         </include>
         <report>
-            <html outputDirectory="reports/coverage"/>
+            <html outputDirectory="public/reports/coverage"/>
         </report>
     </coverage>
     <php>

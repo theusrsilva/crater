@@ -1,8 +1,10 @@
 /Modules
 /node_modules
 /public/storage
+/public/reports
 /public/hot
 /storage/*.key
+/storage/fonts
 /vendor
 /.idea
 Homestead.json
