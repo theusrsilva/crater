@@ -21,9 +21,9 @@ abstract class DuskTestCase extends BaseTestCase
      */
     public static function prepare()
     {
-        // if (! static::runningFirefoxInSail()) {
-        //     static::startFirefoxDriver();
-        // }
+        if (! static::runningFirefoxInSail()) {
+            static::startFirefoxDriver();
+        }
     }
 
     /**
@@ -33,18 +33,17 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        $capabilities = DesiredCapabilities::firefox()->setCapability('acceptInsecureCerts', true)
-        ->setCapability('enablePassThrough', false);
+        $capabilities = DesiredCapabilities::firefox();
 
         $capabilities->getCapability(FirefoxOptions::CAPABILITY)
             ->addArguments($this->filterHeadlessArguments([
                 '--headless',
-                '--window-size=1920,1080'
+                '--window-size=1920,1080',
             ]))
             ->setPreference('devtools.console.stdout.content', true);
 
         return RemoteWebDriver::create(
-            'http://selenium:4444',
+            $_ENV['DUSK_DRIVER_URL'] ?? 'http://localhost:4444',
             $capabilities
         );
     }
