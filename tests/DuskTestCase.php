@@ -4,6 +4,7 @@ namespace Tests;
 
 use Derekmd\Dusk\Concerns\TogglesHeadlessMode;
 use Derekmd\Dusk\Firefox\SupportsFirefox;
+use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Firefox\FirefoxOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -33,19 +34,20 @@ abstract class DuskTestCase extends BaseTestCase
      */
     protected function driver()
     {
-        $capabilities = DesiredCapabilities::firefox()->setCapability('acceptInsecureCerts', true)
-        ->setCapability('enablePassThrough', false);
+        $server = 'http://selenium:4444';
 
-        $capabilities->getCapability(FirefoxOptions::CAPABILITY)
-            ->addArguments($this->filterHeadlessArguments([
-                '--headless',
-                '--window-size=1920,1080'
-            ]))
-            ->setPreference('devtools.console.stdout.content', true);
+        $options = (new ChromeOptions)->addArguments([
+            '--window-size=1920,1080',
+            '--whitelisted-ips=""',
+            '--enable-file-cookies'
+        ]);
+
+        $capabilities = DesiredCapabilities::chrome()
+            ->setCapability(ChromeOptions::CAPABILITY, $options);
 
         return RemoteWebDriver::create(
-            'http://selenium:4444',
-            $capabilities
+            $server,
+            $capabilities,
         );
     }
 }

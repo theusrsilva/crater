@@ -9,6 +9,8 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: crater-php
+    links:
+      - selenium
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
@@ -55,12 +57,12 @@ services:
     networks:
       - crater
   selenium:
-    image: 'selenium/standalone-firefox'
-    container_name: selenium
-    ports:
-      - 4444:4444
+    image: selenium/standalone-chrome:4.3
     volumes:
-        - '/dev/shm:/dev/shm'
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+      - "7900:7900"
     networks:
         - crater
 volumes:
