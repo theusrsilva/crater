@@ -38,7 +38,8 @@ abstract class DuskTestCase extends BaseTestCase
 
         $options = (new ChromeOptions)->addArguments([
             '--window-size=1920,1080',
-            '--whitelisted-ips=""'
+            '--whitelisted-ips=""',
+            '--enable-file-cookies'
         ]);
 
         $capabilities = DesiredCapabilities::chrome()
