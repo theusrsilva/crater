@@ -35,3 +35,36 @@ test('invoice item has many taxes', function () {
 
     $this->assertTrue($invoiceItem->taxes()->exists());
 });
+
+test('invoice item scopeWhereCompany filters correctly', function () {
+    $company_id = 1; // Replace with a valid company ID from your seed data
+    $invoiceItem = InvoiceItem::factory()->create(['company_id' => $company_id]);
+
+    $filteredItems = InvoiceItem::whereCompany($company_id)->get();
+
+    $this->assertTrue($filteredItems->contains($invoiceItem));
+});
+
+
+test('invoice item scopeApplyInvoiceFilters applies date filters', function () {
+    $filters = [
+        'from_date' => '2023-01-01',
+        'to_date' => '2023-12-31',
+    ];
+
+    $filteredItems = InvoiceItem::applyInvoiceFilters($filters)->get();
+
+    // Replace with your actual expectation based on your data and filter criteria
+    $expectedCount = InvoiceItem::whereHas('invoice', function ($query) use ($filters) {
+        $query->whereBetween('invoice_date', [$filters['from_date'], $filters['to_date']]);
+    })->count();
+
+    $this->assertCount($expectedCount, $filteredItems);
+});
+
+
+test('invoice item belongs to recurring invoice', function () {
+    $invoiceItem = InvoiceItem::factory()->forRecurringInvoice()->create();
+
+    $this->assertTrue($invoiceItem->recurringInvoice()->exists());
+});
