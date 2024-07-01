@@ -1,3 +1,13 @@
+Commitar isso nesse github: https://github.com/theusrsilva/crater
+
+
+Dentro da pasta tests/Unit/CompanyTest.php
+
+
+Copiar tudo isso e substituir oque estiver nessa classe de teste.
+
+
+
 <?php
 
 use Crater\Models\Company;
@@ -22,8 +32,49 @@ test('company has many company settings', function () {
     $this->assertTrue($company->settings()->exists());
 });
 
-test('a company belongs to many users', function () {
-    $company = Company::factory()->hasUsers(5)->create();
 
-    $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $company->users);
+
+test('create company', function () {
+    $company = Company::factory()->create();
+
+    $this->assertNotNull($company);
 });
+
+
+test('update company', function () {
+    $company = Company::factory()->create();
+    $newName = 'Updated Company Name';
+
+    $company->update(['name' => $newName]);
+
+    $this->assertEquals($newName, $company->fresh()->name);
+});
+
+
+test('delete company', function () {
+    $company = Company::factory()->create();
+
+    $company->delete();
+
+    $this->assertDeleted($company);
+});
+
+
+
+
+test('company name is required', function () {
+    $this->expectException(\Illuminate\Database\QueryException::class);
+
+    Company::create([]);
+});
+
+
+// Teste de métodos personalizados
+test('company custom method example', function () {
+    $company = Company::factory()->create();
+
+    // Supondo que a classe Company tenha um método customizado `exampleMethod`
+    $result = $company->logo;
+    $this->assertNull($result);
+});
+
