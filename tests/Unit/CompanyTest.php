@@ -1,12 +1,3 @@
-Commitar isso nesse github: https://github.com/theusrsilva/crater
-
-
-Dentro da pasta tests/Unit/CompanyTest.php
-
-
-Copiar tudo isso e substituir oque estiver nessa classe de teste.
-
-
 
 <?php
 
