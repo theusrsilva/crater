@@ -20,5 +20,16 @@ class ExampleTest extends DuskTestCase
             $browser->visit("/admin/dashboard")->assertPathIs("/login")->screenshot("testIsInputsSet");
         });
     }
+    public function testSetEmail()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->waitFor('input[name=email]')
+                ->script([
+                    "document.querySelector('input[name=email]').value = 'email@teste.com.br';",
+                ]);
+            $browser->assertInputValue("email", 'email@teste.com.br');
+
+        });
+    }
     
 }
