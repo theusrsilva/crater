@@ -7,10 +7,13 @@ use Crater\Models\Company;
 use Crater\Models\CompanySetting;
 use Illuminate\Support\Facades\Artisan;
 
+
 beforeEach(function () {
     Artisan::call('db:seed', ['--class' => 'DatabaseSeeder', '--force' => true]);
     Artisan::call('db:seed', ['--class' => 'DemoSeeder', '--force' => true]);
 });
+
+
 
 test('can create a transaction', function () {
     $data = [
@@ -23,13 +26,12 @@ test('can create a transaction', function () {
 
     $transaction = Transaction::createTransaction($data);
 
-    assertInstanceOf(Transaction::class, $transaction);
-    assertNotNull($transaction->unique_hash);
-    assertEquals(Transaction::PENDING, $transaction->status);
+    expect($transaction)->toBeInstanceOf(Transaction::class);
+    expect($transaction->unique_hash)->not->toBeNull();
+    expect($transaction->status)->toBe(Transaction::PENDING);
 });
 
 test('can complete a transaction', function () {
-    // Cria uma transação manualmente
     $transaction = new Transaction([
         'invoice_id' => Invoice::factory()->create()->id,
         'company_id' => Company::factory()->create()->id,
@@ -40,11 +42,9 @@ test('can complete a transaction', function () {
 
     $transaction->save();
 
-    // Chama o método para completar a transação
     $transaction->completeTransaction();
 
-    // Assertiva para verificar se o status da transação foi atualizado para SUCCESS
-    assertEquals(Transaction::SUCCESS, $transaction->status);
+    expect($transaction->status)->toBe(Transaction::SUCCESS);
 });
 
 test('can fail a transaction', function () {
@@ -60,11 +60,10 @@ test('can fail a transaction', function () {
 
     $transaction->failedTransaction();
 
-    assertEquals(Transaction::FAILED, $transaction->status);
+    expect($transaction->status)->toBe(Transaction::FAILED);
 });
 
 test('transaction has many payments', function () {
-    // Cria uma transação manualmente
     $transaction = new Transaction([
         'invoice_id' => Invoice::factory()->create()->id,
         'company_id' => Company::factory()->create()->id,
@@ -75,18 +74,14 @@ test('transaction has many payments', function () {
 
     $transaction->save();
 
-    // Cria três pagamentos associados à transação
     Payment::factory()->count(3)->create(['transaction_id' => $transaction->id]);
 
-    // Assertiva para verificar se a transação possui três pagamentos
-    assertCount(3, $transaction->payments);
+    expect($transaction->payments)->toHaveCount(3);
 });
 
 test('transaction belongs to invoice', function () {
-    // Cria uma fatura usando o factory
     $invoice = Invoice::factory()->create();
 
-    // Cria uma transação associada à fatura criada
     $transaction = new Transaction([
         'invoice_id' => $invoice->id,
         'company_id' => Company::factory()->create()->id,
@@ -97,15 +92,12 @@ test('transaction belongs to invoice', function () {
 
     $transaction->save();
 
-    // Assertiva para verificar se a transação pertence a uma fatura
-    assertInstanceOf(Invoice::class, $transaction->invoice);
+    expect($transaction->invoice)->toBeInstanceOf(Invoice::class);
 });
 
 test('transaction belongs to company', function () {
-    // Cria uma empresa usando o factory
     $company = Company::factory()->create();
 
-    // Cria uma transação associada à empresa criada
     $transaction = new Transaction([
         'invoice_id' => Invoice::factory()->create()->id,
         'company_id' => $company->id,
@@ -116,8 +108,7 @@ test('transaction belongs to company', function () {
 
     $transaction->save();
 
-    // Assertiva para verificar se a transação pertence a uma empresa
-    assertInstanceOf(Company::class, $transaction->company);
+    expect($transaction->company)->toBeInstanceOf(Company::class);
 });
 
 test('checks if a transaction is expired', function () {
@@ -138,7 +129,7 @@ test('checks if a transaction is expired', function () {
 
     $transaction->save();
 
-    assertTrue($transaction->isExpired());
+    expect($transaction->isExpired())->toBeTrue();
 });
 
 test('transaction is not expired when settings are disabled', function () {
@@ -159,7 +150,7 @@ test('transaction is not expired when settings are disabled', function () {
 
     $transaction->save();
 
-    assertFalse($transaction->isExpired());
+    expect($transaction->isExpired())->toBeFalse();
 });
 
 test('can get company setting', function () {
@@ -168,7 +159,7 @@ test('can get company setting', function () {
 
     $expiryDays = (int) CompanySetting::getSetting('link_expiry_days', $company->id);
 
-    assertEquals(7, $expiryDays);
+    expect($expiryDays)->toBe(7);
 });
 
 test('returns null for non-existent setting', function () {
@@ -176,7 +167,7 @@ test('returns null for non-existent setting', function () {
 
     $setting = CompanySetting::getSetting('non_existent_setting', $company->id);
 
-    assertNull($setting);
+    expect($setting)->toBeNull();
 });
 
 test('throws an exception when creating a transaction with missing data', function () {
@@ -187,4 +178,70 @@ test('throws an exception when creating a transaction with missing data', functi
     ];
 
     Transaction::createTransaction($data);
+});
+
+// Teste de Integração
+test('integration: can create transaction with invoice and company', function () {
+    $invoice = Invoice::factory()->create();
+    $company = Company::factory()->create();
+
+    $data = [
+        'invoice_id' => $invoice->id,
+        'company_id' => $company->id,
+        'amount' => 100.00,
+        'transaction_date' => now(),
+        'status' => Transaction::PENDING,
+    ];
+
+    $transaction = Transaction::createTransaction($data);
+
+    expect($transaction)->toBeInstanceOf(Transaction::class);
+    expect($transaction->invoice_id)->toBe($invoice->id);
+    expect($transaction->company_id)->toBe($company->id);
+});
+
+// Medidas de Atributos de Qualidade da ISO 25010
+// Funcionalidade
+test('functionality: create transaction with valid data', function () {
+    $data = [
+        'invoice_id' => Invoice::factory()->create()->id,
+        'company_id' => Company::factory()->create()->id,
+        'amount' => 100.00,
+        'transaction_date' => now(),
+        'status' => Transaction::PENDING,
+    ];
+
+    $transaction = Transaction::createTransaction($data);
+
+    expect($transaction)->toBeInstanceOf(Transaction::class);
+    expect($transaction->unique_hash)->not->toBeNull();
+    expect($transaction->status)->toBe(Transaction::PENDING);
+});
+
+// Usabilidade
+test('usability: methods clarity and simplicity', function () {
+    $methods = ['createTransaction', 'completeTransaction', 'failedTransaction', 'isExpired'];
+
+    foreach ($methods as $method) {
+        expect(method_exists(Transaction::class, $method))->toBeTrue();
+    }
+});
+
+// Confiabilidade
+test('reliability: transaction integrity under different conditions', function () {
+    $transaction = new Transaction([
+        'invoice_id' => Invoice::factory()->create()->id,
+        'company_id' => Company::factory()->create()->id,
+        'amount' => 100.00,
+        'transaction_date' => now(),
+        'status' => Transaction::PENDING,
+    ]);
+
+    $transaction->save();
+
+    $transaction->completeTransaction();
+    expect($transaction->status)->toBe(Transaction::SUCCESS);
+
+    $transaction->failedTransaction();
+    expect($transaction->status)->toBe(Transaction::FAILED);
 });
