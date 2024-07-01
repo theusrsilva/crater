@@ -14,4 +14,11 @@ class ExampleTest extends DuskTestCase
             $browser->visit("/")->assertInputPresent("email")->assertInputPresent("password")->screenshot("testIsInputsSet");
         });
     }
+    public function testNotAuthBackToHome()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit("/admin/dashboard")->assertPathIs("/login")->screenshot("testIsInputsSet");
+        });
+    }
+    
 }
