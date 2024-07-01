@@ -31,5 +31,16 @@ class ExampleTest extends DuskTestCase
 
         });
     }
+        public function testSetPassword()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->waitFor('input[name=email]')
+                ->script([
+                    "document.querySelector('input[name=password]').value = 'teste';",
+                ]);
+            $browser->assertInputValue("password", 'teste');
+
+        });
+    }
     
 }
