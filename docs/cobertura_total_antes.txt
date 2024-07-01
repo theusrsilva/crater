@@ -1,0 +1,418 @@
+Tests:  248 passed
+  Time:   219.86s
+
+  Cov:    45.45%
+
+  Console/Commands/CheckEstimateStatus 42..49 ................... 12.5 %
+  Console/Commands/CheckInvoiceStatus 42..51 .................... 10.0 %
+  Console/Commands/CreateTemplateCommand 41..62 .................. 6.7 %
+  Console/Commands/InstallModuleCommand 41..43 .................. 33.3 %
+  Console/Commands/ResetApp 44..66 ............................... 8.3 %
+  Console/Commands/UpdateCommand 47..239 ......................... 1.1 %
+  Console/Kernel 32..45 ......................................... 15.4 %
+  Events/ModuleDisabledEvent ..................................... 0.0 %
+  Events/ModuleEnabledEvent ...................................... 0.0 %
+  Events/ModuleInstalledEvent .................................... 0.0 %
+  Events/UpdateFinished .......................................... 0.0 %
+  Exceptions/Handler ............................................. 0.0 %
+  Generators/CustomPathGenerator ................................. 0.0 %
+  Http/Controllers/AppVersionController .......................... 0.0 %
+  Http/Controllers/Controller  ................................. 100.0 %
+  Http/Controllers/V1/Admin/Auth/ConfirmPasswordController ....... 0.0 %
+  Http/Controllers/V1/Admin/Auth/ForgotPasswordController ........ 0.0 %
+  Http/Controllers/V1/Admin/Auth/LoginController ................. 0.0 %
+  Http/Controllers/V1/Admin/Auth/RegisterController .............. 0.0 %
+  Http/Controllers/V1/Admin/Auth/ResetPasswordController ......... 0.0 %
+  Http/Controllers/V1/Admin/Auth/VerificationController .......... 0.0 %
+  Http/Controllers/V1/Admin/Backup/ApiController  .............. 100.0 %
+  Http/Controllers/V1/Admin/Backup/BackupsController 37..39, 49..53, 82..97 . 40.7 %
+  Http/Controllers/V1/Admin/Backup/DownloadBackupController ...... 0.0 %
+  Http/Controllers/V1/Admin/Company/CompaniesController 48..54, 65 . 82.8 %
+  Http/Controllers/V1/Admin/Company/CompanyController ............ 0.0 %
+  Http/Controllers/V1/Admin/Config/FiscalYearsController ......... 0.0 %
+  Http/Controllers/V1/Admin/Config/LanguagesController ........... 0.0 %
+  Http/Controllers/V1/Admin/Config/RetrospectiveEditsController .. 0.0 %
+  Http/Controllers/V1/Admin/CustomField/CustomFieldsController 55..57, 87 . 85.0 %
+  Http/Controllers/V1/Admin/Customer/CustomerStatsController 45..47, 51..53 . 91.7 %
+  Http/Controllers/V1/Admin/Customer/CustomersController 86 ..... 96.3 %
+  Http/Controllers/V1/Admin/Dashboard/DashboardController 50..52, 56..58 . 92.5 %
+  Http/Controllers/V1/Admin/Estimate/ChangeEstimateStatusController  . 100.0 %
+  Http/Controllers/V1/Admin/Estimate/ConvertEstimateController 95..110, 118..124 . 73.2 %
+  Http/Controllers/V1/Admin/Estimate/EstimateTemplatesController  . 100.0 %
+  Http/Controllers/V1/Admin/Estimate/EstimatesController 41, 51..53 . 88.5 %
+  Http/Controllers/V1/Admin/Estimate/SendEstimateController  ... 100.0 %
+  Http/Controllers/V1/Admin/Estimate/SendEstimatePreviewController . 0.0 %
+  Http/Controllers/V1/Admin/ExchangeRate/ExchangeRateProviderController . 0.0 %
+  Http/Controllers/V1/Admin/ExchangeRate/GetActiveProviderController . 0.0 %
+  Http/Controllers/V1/Admin/ExchangeRate/GetExchangeRateController . 0.0 %
+  Http/Controllers/V1/Admin/ExchangeRate/GetSupportedCurrenciesController . 0.0 %
+  Http/Controllers/V1/Admin/ExchangeRate/GetUsedCurrenciesController . 0.0 %
+  Http/Controllers/V1/Admin/Expense/ExpenseCategoriesController 87 . 95.0 %
+  Http/Controllers/V1/Admin/Expense/ExpensesController  ........ 100.0 %
+  Http/Controllers/V1/Admin/Expense/ShowReceiptController ........ 0.0 %
+  Http/Controllers/V1/Admin/Expense/UploadReceiptController ...... 0.0 %
+  Http/Controllers/V1/Admin/General/BootstrapController .......... 0.0 %
+  Http/Controllers/V1/Admin/General/BulkExchangeRateController ... 0.0 %
+  Http/Controllers/V1/Admin/General/ConfigController  .......... 100.0 %
+  Http/Controllers/V1/Admin/General/CountriesController  ....... 100.0 %
+  Http/Controllers/V1/Admin/General/CurrenciesController ......... 0.0 %
+  Http/Controllers/V1/Admin/General/DateFormatsController ........ 0.0 %
+  Http/Controllers/V1/Admin/General/GetAllUsedCurrenciesController  . 100.0 %
+  Http/Controllers/V1/Admin/General/NextNumberController 54..57 . 88.5 %
+  Http/Controllers/V1/Admin/General/NotesController  ........... 100.0 %
+  Http/Controllers/V1/Admin/General/NumberPlaceholdersController . 0.0 %
+  Http/Controllers/V1/Admin/General/SearchController  .......... 100.0 %
+  Http/Controllers/V1/Admin/General/SearchUsersController ........ 0.0 %
+  Http/Controllers/V1/Admin/General/TimezonesController .......... 0.0 %
+  Http/Controllers/V1/Admin/Invoice/ChangeInvoiceStatusController  . 100.0 %
+  Http/Controllers/V1/Admin/Invoice/CloneInvoiceController 90..105, 113..114, 119..128 . 70.8 %
+  Http/Controllers/V1/Admin/Invoice/InvoiceTemplatesController ... 0.0 %
+  Http/Controllers/V1/Admin/Invoice/InvoicesController 52, 68..70, 87 . 85.7 %
+  Http/Controllers/V1/Admin/Invoice/SendInvoiceController  ..... 100.0 %
+  Http/Controllers/V1/Admin/Invoice/SendInvoicePreviewController . 0.0 %
+  Http/Controllers/V1/Admin/Item/ItemsController  .............. 100.0 %
+  Http/Controllers/V1/Admin/Item/UnitsController 87 ............. 95.0 %
+  Http/Controllers/V1/Admin/Mobile/AuthController ................ 0.0 %
+  Http/Controllers/V1/Admin/Modules/ApiTokenController ........... 0.0 %
+  Http/Controllers/V1/Admin/Modules/CompleteModuleInstallationController . 0.0 %
+  Http/Controllers/V1/Admin/Modules/CopyModuleController ......... 0.0 %
+  Http/Controllers/V1/Admin/Modules/DisableModuleController ...... 0.0 %
+  Http/Controllers/V1/Admin/Modules/DownloadModuleController ..... 0.0 %
+  Http/Controllers/V1/Admin/Modules/EnableModuleController ....... 0.0 %
+  Http/Controllers/V1/Admin/Modules/ModuleController ............. 0.0 %
+  Http/Controllers/V1/Admin/Modules/ModulesController ............ 0.0 %
+  Http/Controllers/V1/Admin/Modules/UnzipModuleController ........ 0.0 %
+  Http/Controllers/V1/Admin/Modules/UploadModuleController ....... 0.0 %
+  Http/Controllers/V1/Admin/Payment/PaymentMethodsController 88, 92 . 91.3 %
+  Http/Controllers/V1/Admin/Payment/PaymentsController  ........ 100.0 %
+  Http/Controllers/V1/Admin/Payment/SendPaymentController  ..... 100.0 %
+  Http/Controllers/V1/Admin/Payment/SendPaymentPreviewController . 0.0 %
+  Http/Controllers/V1/Admin/RecurringInvoice/RecurringInvoiceController  . 100.0 %
+  Http/Controllers/V1/Admin/RecurringInvoice/RecurringInvoiceFrequencyController  . 100.0 %
+  Http/Controllers/V1/Admin/Report/CustomerSalesReportController . 0.0 %
+  Http/Controllers/V1/Admin/Report/ExpensesReportController ...... 0.0 %
+  Http/Controllers/V1/Admin/Report/ItemSalesReportController ..... 0.0 %
+  Http/Controllers/V1/Admin/Report/ProfitLossReportController .... 0.0 %
+  Http/Controllers/V1/Admin/Report/TaxSummaryReportController .... 0.0 %
+  Http/Controllers/V1/Admin/Role/AbilitiesController ............. 0.0 %
+  Http/Controllers/V1/Admin/Role/RolesController ................. 0.0 %
+  Http/Controllers/V1/Admin/Settings/CompanyController 68..123 .. 25.0 %
+  Http/Controllers/V1/Admin/Settings/CompanyCurrencyCheckTransactionsController . 0.0 %
+  Http/Controllers/V1/Admin/Settings/DiskController 40, 63, 67..68, 92..124, 140..148 . 62.5 %
+  Http/Controllers/V1/Admin/Settings/GetCompanyMailConfigurationController . 0.0 %
+  Http/Controllers/V1/Admin/Settings/GetCompanySettingsController  . 100.0 %
+  Http/Controllers/V1/Admin/Settings/GetSettingsController ....... 0.0 %
+  Http/Controllers/V1/Admin/Settings/GetUserSettingsController ... 0.0 %
+  Http/Controllers/V1/Admin/Settings/MailConfigurationController . 0.0 %
+  Http/Controllers/V1/Admin/Settings/TaxTypesController 88 ...... 95.2 %
+  Http/Controllers/V1/Admin/Settings/UpdateCompanySettingsController  . 100.0 %
+  Http/Controllers/V1/Admin/Settings/UpdateSettingsController .... 0.0 %
+  Http/Controllers/V1/Admin/Settings/UpdateUserSettingsController . 0.0 %
+  Http/Controllers/V1/Admin/Update/CheckVersionController ........ 0.0 %
+  Http/Controllers/V1/Admin/Update/CopyFilesController ........... 0.0 %
+  Http/Controllers/V1/Admin/Update/DeleteFilesController ......... 0.0 %
+  Http/Controllers/V1/Admin/Update/DownloadUpdateController ...... 0.0 %
+  Http/Controllers/V1/Admin/Update/FinishUpdateController ........ 0.0 %
+  Http/Controllers/V1/Admin/Update/MigrateUpdateController ....... 0.0 %
+  Http/Controllers/V1/Admin/Update/UnzipUpdateController ......... 0.0 %
+  Http/Controllers/V1/Admin/Update/UpdateController .............. 0.0 %
+  Http/Controllers/V1/Admin/Users/UsersController 76..97 ........ 68.2 %
+  Http/Controllers/V1/Customer/Auth/ForgotPasswordController ..... 0.0 %
+  Http/Controllers/V1/Customer/Auth/LoginController .............. 0.0 %
+  Http/Controllers/V1/Customer/Auth/ResetPasswordController ...... 0.0 %
+  Http/Controllers/V1/Customer/Estimate/AcceptEstimateController 29 . 87.5 %
+  Http/Controllers/V1/Customer/Estimate/EstimatesController 62 .. 94.1 %
+  Http/Controllers/V1/Customer/EstimatePdfController ............. 0.0 %
+  Http/Controllers/V1/Customer/Expense/ExpensesController 54 .... 93.3 %
+  Http/Controllers/V1/Customer/General/BootstrapController ....... 0.0 %
+  Http/Controllers/V1/Customer/General/DashboardController  .... 100.0 %
+  Http/Controllers/V1/Customer/General/ProfileController 21, 24..27 . 76.5 %
+  Http/Controllers/V1/Customer/Invoice/InvoicesController 44 .... 94.1 %
+  Http/Controllers/V1/Customer/InvoicePdfController .............. 0.0 %
+  Http/Controllers/V1/Customer/Payment/PaymentMethodController ... 0.0 %
+  Http/Controllers/V1/Customer/Payment/PaymentsController 56 .... 94.4 %
+  Http/Controllers/V1/Customer/PaymentPdfController .............. 0.0 %
+  Http/Controllers/V1/Installation/AppDomainController ........... 0.0 %
+  Http/Controllers/V1/Installation/DatabaseConfigurationController . 0.0 %
+  Http/Controllers/V1/Installation/FilePermissionsController ..... 0.0 %
+  Http/Controllers/V1/Installation/FinishController .............. 0.0 %
+  Http/Controllers/V1/Installation/LoginController ............... 0.0 %
+  Http/Controllers/V1/Installation/OnboardingWizardController .... 0.0 %
+  Http/Controllers/V1/Installation/RequirementsController ........ 0.0 %
+  Http/Controllers/V1/Modules/ScriptController ................... 0.0 %
+  Http/Controllers/V1/Modules/StyleController .................... 0.0 %
+  Http/Controllers/V1/PDF/DownloadInvoicePdfController ........... 0.0 %
+  Http/Controllers/V1/PDF/DownloadPaymentPdfController ........... 0.0 %
+  Http/Controllers/V1/PDF/DownloadReceiptController .............. 0.0 %
+  Http/Controllers/V1/PDF/EstimatePdfController .................. 0.0 %
+  Http/Controllers/V1/PDF/InvoicePdfController ................... 0.0 %
+  Http/Controllers/V1/PDF/PaymentPdfController ................... 0.0 %
+  Http/Controllers/V1/Webhook/CronJobController .................. 0.0 %
+  Http/Kernel  ................................................. 100.0 %
+  Http/Middleware/AdminMiddleware ................................ 0.0 %
+  Http/Middleware/Authenticate ................................... 0.0 %
+  Http/Middleware/CompanyMiddleware 24 .......................... 80.0 %
+  Http/Middleware/ConfigMiddleware  ............................ 100.0 %
+  Http/Middleware/CronJobMiddleware .............................. 0.0 %
+  Http/Middleware/CustomerPortalMiddleware 23..25 ............... 60.0 %
+  Http/Middleware/EncryptCookies  .............................. 100.0 %
+  Http/Middleware/InstallationMiddleware ......................... 0.0 %
+  Http/Middleware/PdfMiddleware .................................. 0.0 %
+  Http/Middleware/RedirectIfAuthenticated ........................ 0.0 %
+  Http/Middleware/RedirectIfInstalled ............................ 0.0 %
+  Http/Middleware/RedirectIfUnauthorized ......................... 0.0 %
+  Http/Middleware/ScopeBouncer 39 ............................... 85.7 %
+  Http/Middleware/TrimStrings  ................................. 100.0 %
+  Http/Middleware/TrustProxies  ................................ 100.0 %
+  Http/Middleware/VerifyCsrfToken  ............................. 100.0 %
+  Http/Requests/AvatarRequest .................................... 0.0 %
+  Http/Requests/BulkExchangeRateRequest .......................... 0.0 %
+  Http/Requests/CompaniesRequest  .............................. 100.0 %
+  Http/Requests/CompanyLogoRequest ............................... 0.0 %
+  Http/Requests/CompanyRequest  ................................ 100.0 %
+  Http/Requests/CompanySettingRequest ............................ 0.0 %
+  Http/Requests/CustomFieldRequest  ............................ 100.0 %
+  Http/Requests/Customer/CustomerLoginRequest .................... 0.0 %
+  Http/Requests/Customer/CustomerProfileRequest  ............... 100.0 %
+  Http/Requests/CustomerEstimateStatusRequest .................... 0.0 %
+  Http/Requests/CustomerRequest  ............................... 100.0 %
+  Http/Requests/DatabaseEnvironmentRequest ....................... 0.0 %
+  Http/Requests/DeleteCustomersRequest  ........................ 100.0 %
+  Http/Requests/DeleteEstimatesRequest  ........................ 100.0 %
+  Http/Requests/DeleteExpensesRequest  ......................... 100.0 %
+  Http/Requests/DeleteInvoiceRequest  .......................... 100.0 %
+  Http/Requests/DeleteItemsRequest  ............................ 100.0 %
+  Http/Requests/DeletePaymentsRequest  ......................... 100.0 %
+  Http/Requests/DeleteUserRequest ................................ 0.0 %
+  Http/Requests/DiskEnvironmentRequest 29..52, 55..82, 85..108 .. 57.1 %
+  Http/Requests/DomainEnvironmentRequest ......................... 0.0 %
+  Http/Requests/EstimatesRequest  .............................. 100.0 %
+  Http/Requests/ExchangeRateLogRequest ........................... 0.0 %
+  Http/Requests/ExchangeRateProviderRequest ...................... 0.0 %
+  Http/Requests/ExpenseCategoryRequest  ........................ 100.0 %
+  Http/Requests/ExpenseRequest  ................................ 100.0 %
+  Http/Requests/GetSettingRequest ................................ 0.0 %
+  Http/Requests/GetSettingsRequest  ............................ 100.0 %
+  Http/Requests/InvoicesRequest  ............................... 100.0 %
+  Http/Requests/ItemsRequest  .................................. 100.0 %
+  Http/Requests/LoginRequest ..................................... 0.0 %
+  Http/Requests/MailEnvironmentRequest ........................... 0.0 %
+  Http/Requests/NotesRequest  .................................. 100.0 %
+  Http/Requests/PaymentMethodRequest  .......................... 100.0 %
+  Http/Requests/PaymentRequest  ................................ 100.0 %
+  Http/Requests/ProfileRequest  ................................ 100.0 %
+  Http/Requests/RecurringInvoiceRequest  ....................... 100.0 %
+  Http/Requests/Request  ....................................... 100.0 %
+  Http/Requests/RoleRequest ...................................... 0.0 %
+  Http/Requests/SendEstimatesRequest  .......................... 100.0 %
+  Http/Requests/SendInvoiceRequest  ............................ 100.0 %
+  Http/Requests/SendPaymentRequest  ............................ 100.0 %
+  Http/Requests/SettingKeyRequest ................................ 0.0 %
+  Http/Requests/SettingRequest ................................... 0.0 %
+  Http/Requests/TaxTypeRequest  ................................ 100.0 %
+  Http/Requests/UnitRequest  ................................... 100.0 %
+  Http/Requests/UnzipUpdateRequest ............................... 0.0 %
+  Http/Requests/UpdateSettingsRequest  ......................... 100.0 %
+  Http/Requests/UploadExpenseReceiptRequest ...................... 0.0 %
+  Http/Requests/UploadModuleRequest .............................. 0.0 %
+  Http/Requests/UserRequest 55..60 .............................. 78.6 %
+  Http/Resources/AbilityCollection ............................... 0.0 %
+  Http/Resources/AbilityResource ................................. 0.0 %
+  Http/Resources/AddressCollection ............................... 0.0 %
+  Http/Resources/AddressResource 36 ............................. 94.4 %
+  Http/Resources/CompanyCollection ............................... 0.0 %
+  Http/Resources/CompanyResource  .............................. 100.0 %
+  Http/Resources/CountryCollection ............................... 0.0 %
+  Http/Resources/CountryResource  .............................. 100.0 %
+  Http/Resources/CurrencyCollection .............................. 0.0 %
+  Http/Resources/CurrencyResource  ............................. 100.0 %
+  Http/Resources/CustomFieldCollection ........................... 0.0 %
+  Http/Resources/CustomFieldResource  .......................... 100.0 %
+  Http/Resources/CustomFieldValueCollection ...................... 0.0 %
+  Http/Resources/CustomFieldValueResource ........................ 0.0 %
+  Http/Resources/Customer/AddressCollection ...................... 0.0 %
+  Http/Resources/Customer/AddressResource 36 .................... 94.4 %
+  Http/Resources/Customer/CompanyResource  ..................... 100.0 %
+  Http/Resources/Customer/CountryCollection ...................... 0.0 %
+  Http/Resources/Customer/CountryResource  ..................... 100.0 %
+  Http/Resources/Customer/CurrencyCollection ..................... 0.0 %
+  Http/Resources/Customer/CurrencyResource  .................... 100.0 %
+  Http/Resources/Customer/CustomFieldCollection .................. 0.0 %
+  Http/Resources/Customer/CustomFieldResource .................... 0.0 %
+  Http/Resources/Customer/CustomFieldValueCollection ............. 0.0 %
+  Http/Resources/Customer/CustomFieldValueResource ............... 0.0 %
+  Http/Resources/Customer/CustomerCollection ..................... 0.0 %
+  Http/Resources/Customer/CustomerResource 41 ................... 96.2 %
+  Http/Resources/Customer/EstimateCollection ..................... 0.0 %
+  Http/Resources/Customer/EstimateItemCollection ................. 0.0 %
+  Http/Resources/Customer/EstimateItemResource ................... 0.0 %
+  Http/Resources/Customer/EstimateResource 46, 52, 55 ........... 92.3 %
+  Http/Resources/Customer/ExpenseCategoryCollection .............. 0.0 %
+  Http/Resources/Customer/ExpenseCategoryResource  ............. 100.0 %
+  Http/Resources/Customer/ExpenseCollection ...................... 0.0 %
+  Http/Resources/Customer/ExpenseResource 41, 50 ................ 92.9 %
+  Http/Resources/Customer/InvoiceCollection ...................... 0.0 %
+  Http/Resources/Customer/InvoiceItemCollection .................. 0.0 %
+  Http/Resources/Customer/InvoiceItemResource .................... 0.0 %
+  Http/Resources/Customer/InvoiceResource 56, 62, 65 ............ 93.9 %
+  Http/Resources/Customer/ItemCollection ......................... 0.0 %
+  Http/Resources/Customer/PaymentCollection ...................... 0.0 %
+  Http/Resources/Customer/PaymentMethodCollection ................ 0.0 %
+  Http/Resources/Customer/PaymentMethodResource  ............... 100.0 %
+  Http/Resources/Customer/PaymentResource 39, 45, 54 ............ 90.3 %
+  Http/Resources/Customer/RecurringInvoiceCollection ............. 0.0 %
+  Http/Resources/Customer/RecurringInvoiceResource ............... 0.0 %
+  Http/Resources/Customer/TaxCollection .......................... 0.0 %
+  Http/Resources/Customer/TaxResource ............................ 0.0 %
+  Http/Resources/Customer/TaxTypeCollection ...................... 0.0 %
+  Http/Resources/Customer/TaxTypeResource ........................ 0.0 %
+  Http/Resources/Customer/TransactionCollection .................. 0.0 %
+  Http/Resources/Customer/TransactionResource .................... 0.0 %
+  Http/Resources/Customer/UserCollection ......................... 0.0 %
+  Http/Resources/Customer/UserResource ........................... 0.0 %
+  Http/Resources/CustomerCollection .............................. 0.0 %
+  Http/Resources/CustomerResource 46 ............................ 96.8 %
+  Http/Resources/EstimateCollection .............................. 0.0 %
+  Http/Resources/EstimateItemCollection .......................... 0.0 %
+  Http/Resources/EstimateItemResource 41 ........................ 95.7 %
+  Http/Resources/EstimateResource 62 ............................ 97.8 %
+  Http/Resources/ExchangeRateLogCollection ....................... 0.0 %
+  Http/Resources/ExchangeRateLogResource ......................... 0.0 %
+  Http/Resources/ExchangeRateProviderCollection .................. 0.0 %
+  Http/Resources/ExchangeRateProviderResource .................... 0.0 %
+  Http/Resources/ExpenseCategoryCollection ....................... 0.0 %
+  Http/Resources/ExpenseCategoryResource  ...................... 100.0 %
+  Http/Resources/ExpenseCollection ............................... 0.0 %
+  Http/Resources/ExpenseResource 45, 54 ......................... 93.5 %
+  Http/Resources/FileDiskCollection .............................. 0.0 %
+  Http/Resources/FileDiskResource  ............................. 100.0 %
+  Http/Resources/InvoiceCollection ............................... 0.0 %
+  Http/Resources/InvoiceItemCollection ........................... 0.0 %
+  Http/Resources/InvoiceItemResource 42 ......................... 95.8 %
+  Http/Resources/InvoiceResource 72 ............................. 98.2 %
+  Http/Resources/ItemCollection .................................. 0.0 %
+  Http/Resources/ItemResource  ................................. 100.0 %
+  Http/Resources/ModuleCollection ................................ 0.0 %
+  Http/Resources/ModuleResource .................................. 0.0 %
+  Http/Resources/NoteCollection .................................. 0.0 %
+  Http/Resources/NoteResource  ................................. 100.0 %
+  Http/Resources/PaymentCollection ............................... 0.0 %
+  Http/Resources/PaymentMethodCollection ......................... 0.0 %
+  Http/Resources/PaymentMethodResource  ........................ 100.0 %
+  Http/Resources/PaymentResource 47, 56 ......................... 93.9 %
+  Http/Resources/RecurringInvoiceCollection ...................... 0.0 %
+  Http/Resources/RecurringInvoiceResource 49, 61, 64 ............ 93.5 %
+  Http/Resources/RoleCollection .................................. 0.0 %
+  Http/Resources/RoleResource  ................................. 100.0 %
+  Http/Resources/TaxCollection ................................... 0.0 %
+  Http/Resources/TaxResource  .................................. 100.0 %
+  Http/Resources/TaxTypeCollection ............................... 0.0 %
+  Http/Resources/TaxTypeResource  .............................. 100.0 %
+  Http/Resources/TransactionCollection ........................... 0.0 %
+  Http/Resources/TransactionResource ............................. 0.0 %
+  Http/Resources/UnitCollection .................................. 0.0 %
+  Http/Resources/UnitResource  ................................. 100.0 %
+  Http/Resources/UserCollection .................................. 0.0 %
+  Http/Resources/UserResource  ................................. 100.0 %
+  Jobs/CreateBackupJob 39..62 .................................... 7.1 %
+  Jobs/GenerateEstimatePdfJob  ................................. 100.0 %
+  Jobs/GenerateInvoicePdfJob  .................................. 100.0 %
+  Jobs/GeneratePaymentPdfJob  .................................. 100.0 %
+  Listeners/Updates/Listener ..................................... 0.0 %
+  Listeners/Updates/v1/Version110 ................................ 0.0 %
+  Listeners/Updates/v2/Version200 ................................ 0.0 %
+  Listeners/Updates/v2/Version201 ................................ 0.0 %
+  Listeners/Updates/v2/Version202 ................................ 0.0 %
+  Listeners/Updates/v2/Version210 ................................ 0.0 %
+  Listeners/Updates/v3/Version300 ................................ 0.0 %
+  Listeners/Updates/v3/Version310 ................................ 0.0 %
+  Listeners/Updates/v3/Version311 ................................ 0.0 %
+  Mail/EstimateViewedMail ........................................ 0.0 %
+  Mail/InvoiceViewedMail ......................................... 0.0 %
+  Mail/SendEstimateMail 36..61 ................................... 5.6 %
+  Mail/SendInvoiceMail 36..61 .................................... 5.6 %
+  Mail/SendPaymentMail 36..61 .................................... 5.6 %
+  Mail/TestMail .................................................. 0.0 %
+  Models/Address 35 ............................................. 83.3 %
+  Models/Company 40..43, 55, 68, 83..98, 113..123, 138, 267..380 . 47.4 %
+  Models/CompanySetting 43..44 .................................. 86.7 %
+  Models/Country  .............................................. 100.0 %
+  Models/Currency  ............................................. 100.0 %
+  Models/CustomField 31..38, 70..72, 79, 90, 94..100 ............ 66.7 %
+  Models/CustomFieldValue 27..38, 53 ............................ 25.0 %
+  Models/Customer 98, 118, 126, 138, 142..146, 151, 155, 159, 163..168, 197, 210, 232, 243, 256..266, 282..306, 320, 324, 328, 332, 336..338 . 63.6 %
+  Models/EmailLog ................................................ 0.0 %
+  Models/Estimate 66, 123, 133, 160, 164, 174, 178..186, 202, 213, 243, 274, 288, 325, 376..452, 468, 515, 529, 533..534 . 71.3 %
+  Models/EstimateItem 44 ........................................ 75.0 %
+  Models/ExchangeRateLog 22 ..................................... 87.5 %
+  Models/ExchangeRateProvider .................................... 0.0 %
+  Models/Expense 87..88, 100, 111, 127..136, 158, 162, 172..174, 184, 199, 209, 215, 223..229, 243, 247, 266, 269..270, 274 . 69.0 %
+  Models/ExpenseCategory 51..56, 64, 68, 72, 79 ................. 66.7 %
+  Models/FileDisk 30..45, 52, 62, 66..68, 72..74, 120, 128..129, 138, 154..161, 174, 187..192, 202 . 61.3 %
+  Models/Invoice 72, 107, 123, 143, 145, 147, 156, 158, 197..202, 234, 251, 253, 260, 264, 278, 282..290, 300, 311, 322, 351, 381, 385, 391, 412, 426, 455..459, 508, 517, 534, 544..587, 598..631, 692, 701..702, 717 . 71.9 %
+  Models/InvoiceItem 46..79 ..................................... 18.8 %
+  Models/Item 36, 56..66, 82, 86, 90..92, 99 .................... 82.1 %
+  Models/Module  ............................................... 100.0 %
+  Models/Note 24, 28..39 ........................................ 55.6 %
+  Models/Payment 59..60, 90, 110, 176, 194..195, 199..200, 228, 247..257, 284, 290, 309, 313, 317, 321..323, 327..348, 363..404, 415, 444..472 . 57.7 %
+  Models/PaymentMethod 26, 46, 56..61, 69, 73, 77, 84, 101..104 . 54.2 %
+  Models/RecurringInvoice 118, 126..153, 163, 167, 171..173, 177, 181..183, 200, 204, 227, 231, 243..389, 402..405, 414, 418, 422 . 31.8 %
+  Models/Setting 33..39, 53..61 ................................. 60.0 %
+  Models/Tax 65..101 ............................................ 32.0 %
+  Models/TaxType 41, 49, 53, 57, 61..74, 80 ..................... 50.0 %
+  Models/Transaction ............................................. 0.0 %
+  Models/Unit 31..36, 44, 48, 52, 61 ............................ 62.5 %
+  Models/User 64, 76..85, 97..107, 117, 127..142, 152..215, 223, 227, 231, 235, 239..266, 276, 306..314, 327, 355..430 . 28.8 %
+  Models/UserSetting ............................................. 0.0 %
+  Notifications/CustomerMailResetPasswordNotification ............ 0.0 %
+  Notifications/MailResetPasswordNotification .................... 0.0 %
+  Policies/CompanyPolicy 19, 28, 37 ............................. 66.7 %
+  Policies/CustomFieldPolicy 26..42, 57, 73, 89..121 ............ 38.1 %
+  Policies/CustomerPolicy 26, 42, 57, 73..121, 136 .............. 41.7 %
+  Policies/DashboardPolicy 20 ................................... 66.7 %
+  Policies/EstimatePolicy 26..42, 57, 73..121, 137, 152 ......... 37.0 %
+  Policies/ExchangeRateProviderPolicy ............................ 0.0 %
+  Policies/ExpenseCategoryPolicy 27, 43, 58, 74, 90..122 ........ 47.6 %
+  Policies/ExpensePolicy 26, 42, 57, 73..121, 136 ............... 41.7 %
+  Policies/InvoicePolicy 26..42, 57, 73..121, 137, 152 .......... 37.0 %
+  Policies/ItemPolicy 26, 42, 57, 73..121, 136 .................. 41.7 %
+  Policies/ModulesPolicy ......................................... 0.0 %
+  Policies/NotePolicy 20, 29 .................................... 66.7 %
+  Policies/OwnerPolicy ........................................... 0.0 %
+  Policies/PaymentMethodPolicy 27, 43, 58, 74, 90..122 .......... 47.6 %
+  Policies/PaymentPolicy 26, 42, 57, 73..121, 137, 152 .......... 44.4 %
+  Policies/RecurringInvoicePolicy 26, 42, 57, 73..121, 136 ...... 41.7 %
+  Policies/ReportPolicy .......................................... 0.0 %
+  Policies/RolePolicy ............................................ 0.0 %
+  Policies/SettingsPolicy 19, 28, 37..55 ........................ 40.0 %
+  Policies/TaxTypePolicy 26, 42, 57, 73, 89..121 ................ 47.6 %
+  Policies/UnitPolicy 27, 43, 58, 74, 90..122 ................... 47.6 %
+  Policies/UserPolicy 24, 40, 55..150 ........................... 22.2 %
+  Providers/AppServiceProvider 22..67 ........................... 15.0 %
+  Providers/AuthServiceProvider  ............................... 100.0 %
+  Providers/BroadcastServiceProvider  .......................... 100.0 %
+  Providers/DropboxServiceProvider 31..35 ....................... 25.0 %
+  Providers/EventServiceProvider  .............................. 100.0 %
+  Providers/RouteServiceProvider 69 ............................. 90.9 %
+  Providers/ViewServiceProvider 29..33 .......................... 16.7 %
+  Rules/Backup/BackupDisk ........................................ 0.0 %
+  Rules/Backup/FilesystemDisks ................................... 0.0 %
+  Rules/Backup/PathToZip ......................................... 0.0 %
+  Rules/Base64Mime ............................................... 0.0 %
+  Rules/RelationNotExist 37, 50 ................................. 71.4 %
+  Services/Module/Module ......................................... 0.0 %
+  Services/Module/ModuleFacade ................................... 0.0 %
+  Services/SerialNumberFormatter 55, 93, 207..210, 212..215, 217..223, 225..227 . 83.3 %
+  Space/DateFormatter ............................................ 0.0 %
+  Space/EnvironmentManager ....................................... 0.0 %
+  Space/FilePermissionChecker .................................... 0.0 %
+  Space/ModuleInstaller .......................................... 0.0 %
+  Space/RequirementsChecker ...................................... 0.0 %
+  Space/SiteApi .................................................. 0.0 %
+  Space/TimeZones ................................................ 0.0 %
+  Space/Updater .................................................. 0.0 %
+  Space/helpers 17..79, 90, 93, 96, 99, 105, 108, 111, 114, 117, 130..150, 172..179 . 34.9 %
+  Traits/ExchangeRateProvidersTrait .............................. 0.0 %
+  Traits/GeneratesMenuTrait ...................................... 0.0 %
+  Traits/GeneratesPdfTrait 15..66, 77..107, 154, 158 ............ 53.7 %
+  Traits/HasCustomFieldsTrait 18..79 ............................. 8.8 %
