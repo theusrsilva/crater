@@ -35,7 +35,7 @@ test('set time answer attribute', function () {
 test('get default answer attribute', function () {
     $fieldValue = CustomFieldValue::factory()->create([
         'type' => 'Input',
-        "string_answer" => "teste"// 
+        "string_answer" => "teste"//
     ]);
     $this->assertEquals("teste", $fieldValue->defaultAnswer);
 });
@@ -63,4 +63,30 @@ test('custom field value has guarded and dates properties', function () {
     $this->assertContains('id', $fieldValue->getGuarded());
     $this->assertContains('date_answer', $fieldValue->getDates());
     $this->assertContains('date_time_answer', $fieldValue->getDates());
+});
+
+test('can set and get time answer attribute', function () {
+
+    $customFieldValue = Mockery::mock(CustomFieldValue::class)->makePartial();
+
+    $customFieldValue->setTimeAnswerAttribute('15:30:00');
+
+    expect($customFieldValue->time_answer)->toBe('15:30:00');
+});
+
+test('can mock relationships and methods of CustomFieldValue', function () {
+
+    $customFieldValue = Mockery::mock(CustomFieldValue::class)->makePartial();
+
+
+    $companyMock = Mockery::mock(Company::class);
+    $customFieldValue->shouldReceive('company')->andReturn($companyMock);
+
+
+    $customFieldMock = Mockery::mock(CustomField::class);
+    $customFieldValue->shouldReceive('customField')->andReturn($customFieldMock);
+
+
+    expect($customFieldValue->company())->toBe($companyMock);
+    expect($customFieldValue->customField())->toBe($customFieldMock);
 });
