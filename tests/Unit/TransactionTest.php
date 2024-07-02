@@ -245,3 +245,42 @@ test('reliability: transaction integrity under different conditions', function (
     $transaction->failedTransaction();
     expect($transaction->status)->toBe(Transaction::FAILED);
 });
+
+test('can complete and fail a transaction', function () {
+
+    $transaction = Mockery::mock(Transaction::class)->makePartial();
+
+
+    $transaction->shouldReceive('save')->once();
+    $transaction->completeTransaction();
+    expect($transaction->status)->toBe(Transaction::SUCCESS);
+
+    $transaction->shouldReceive('save')->once();
+    $transaction->failedTransaction();
+    expect($transaction->status)->toBe(Transaction::FAILED);
+});
+
+test('checks if transaction is expired', function () {
+
+    $currentDate = now();
+
+    $transaction = Mockery::mock(Transaction::class)->makePartial();
+    $companySetting = Mockery::mock(CompanySetting::class)->makePartial();
+    $transaction->shouldReceive('getAttribute')->with('updated_at')->andReturn($currentDate->subDays(8));
+    $transaction->shouldReceive('getAttribute')->with('status')->andReturn(Transaction::SUCCESS);
+    $transaction->company_id = 1;
+
+    $companySetting->shouldReceive('getSetting')
+        ->with('link_expiry_days', $transaction->company_id)
+        ->andReturn(7);
+
+    $companySetting->shouldReceive('getSetting')
+        ->with('automatically_expire_public_links', $transaction->company_id)
+        ->andReturn('YES');
+
+    expect($transaction->isExpired())->toBeTrue();
+
+    $transaction->shouldReceive('getAttribute')->with('updated_at')->andReturn($currentDate->subDays(6));
+
+    expect($transaction->isExpired())->toBeFalse();
+});
