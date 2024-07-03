@@ -56,4 +56,39 @@ class TestMailTest extends TestCase
         $this->assertEquals($subject, $deserializedMail->subject);
         $this->assertEquals($message, $deserializedMail->message);
     }
+
+    public function testBuildsTheEmailWithCorrectMessage()
+    {
+        $subject = 'Test Subject';
+        $message = 'This is a test message.';
+
+        $mail = \Mockery::mock(TestMail::class, [$subject, $message])->makePartial();
+
+        $mail->shouldReceive('build')
+            ->andReturnSelf();
+        $builtMail = $mail->build();
+
+        $this->assertInstanceOf(TestMail::class, $builtMail);
+
+        $this->assertEquals('Test Subject', $builtMail->subject);
+
+    }
+    public function testBuildsTheEmailWithCorrectSubject()
+    {
+        $subject = 'Test Subject';
+        $message = 'This is a test message.';
+
+        $mail = \Mockery::mock(TestMail::class, [$subject, $message])->makePartial();
+
+        $mail->shouldReceive('build')
+            ->andReturnSelf();
+
+        $builtMail = $mail->build();
+
+        $this->assertInstanceOf(TestMail::class, $builtMail);
+
+        $this->assertEquals($subject, $builtMail->subject);
+    }
+
+
 }
