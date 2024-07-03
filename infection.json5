@@ -1,0 +1,32 @@
+{
+    "$schema": "https://raw.githubusercontent.com/infection/infection/0.29.6/resources/schema.json",
+    "source": {
+        "directories": [
+            "app"
+        ],
+        "excludes": [
+            "Console",
+            "Events",
+            "Exceptions",
+            "Generators",
+            "Http",
+            "Jobs",
+            "Listeners",
+            "Mail",
+            "Notifications",
+            "Policies",
+            "Providers",
+            "Rules",
+            "Services",
+            "Space",
+            "Traits"
+        ]
+    },
+    "testFramework": "pest",
+    "logs": {
+        "text": "storage/logs/logs8R5VCH"
+    },
+    "mutators": {
+        "@default": true
+    }
+}

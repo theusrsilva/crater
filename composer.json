@@ -17,6 +17,7 @@
     "fideloper/proxy": "^4.0",
     "fruitcake/laravel-cors": "^1.0",
     "guzzlehttp/guzzle": "^7.0.1",
+    "infection/infection": "^0.26.16",
     "innocenzi/laravel-vite": "^0.1.1",
     "intervention/image": "^2.3",
     "jasonmccreary/laravel-test-assertions": "^2.0",
@@ -85,7 +86,8 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "allow-plugins": {
-      "pestphp/pest-plugin": true
+      "pestphp/pest-plugin": true,
+      "infection/extension-installer": true
     }
   },
   "extra": {
